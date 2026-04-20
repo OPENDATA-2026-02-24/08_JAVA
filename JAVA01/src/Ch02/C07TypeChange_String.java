@@ -38,6 +38,7 @@ public class C07TypeChange_String {
 		String strValue = "A";
 //		char var = (char)strValue;
 		char var = strValue.charAt(0);
+	
 
 	}
 
