@@ -21,6 +21,8 @@ public class C06상수 {
 		final double PI = 3.14;
 		
 		double result = PI*4*4;
+		
+
 
 	}
 
