@@ -142,12 +142,12 @@ public class C01IF {
 		//국어<40||영어<40||수학<40||과학<40||평균<60 :불합격
 		//그외 합격
 		
-		Scanner sc = new Scanner(System.in);
-		int 국어= sc.nextInt();
-		int 영어= sc.nextInt();
-		int 수학= sc.nextInt();
-		int 과학= sc.nextInt();
-		double 평균 = (double)(국어+영어+수학+과학)/4;
+//		Scanner sc = new Scanner(System.in);
+//		int 국어= sc.nextInt();
+//		int 영어= sc.nextInt();
+//		int 수학= sc.nextInt();
+//		int 과학= sc.nextInt();
+//		double 평균 = (double)(국어+영어+수학+과학)/4;
 
 //		if(국어<40) 
 //			System.out.println("불합격");
@@ -186,6 +186,33 @@ public class C01IF {
 		//60 ~ 69점은  D,   -> 점수<70 && 점수>=60
 		//나머지 점수는 F를 출력하는 프로그램을 작성하시오. 점수<60
 		
+		
+		// 점수>=90				A
+		// 점수<90 && 점수>=80 	B
+		// 점수<80 && 점수>=70 	C
+		// 점수<70 && 점수>=60	D
+		// 나머지는 				F
+		Scanner sc = new Scanner(System.in);
+		int 점수 = sc.nextInt();
+		
+		if(점수>=90)
+			System.out.println("A");
+		else if(점수>=80)
+			System.out.println("B");
+		else if(점수>=70)
+			System.out.println("C");
+		else if(점수>=60)
+			System.out.println("D");
+		else
+			System.out.println("E");
+		
+		sc.close();
+		
 	}
 	
 }
+
+
+
+
+
