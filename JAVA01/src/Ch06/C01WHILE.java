@@ -41,20 +41,101 @@ public class C01WHILE {
 		
 		//03 1 부터 10까지 합 구하기
 		
-		int i=1;
-		int sum = 0;
-		while(i<=10) {
-			System.out.println("i : "+ i);
-			sum+=i;
-			i++;
-		}
-		System.out.printf("%d 부터 %d 까지 합 : %d\n", 1,10,sum);
+//		int i=1;
+//		int sum = 0;
+//		while(i<=10) {
+//			System.out.println("i : "+ i);
+//			sum+=i;
+//			i++;
+//		}
+//		System.out.printf("%d 부터 %d 까지 합 : %d\n", 1,10,sum);
 		
 		// 1 부터 N까지의 합
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		
+//		int i=1;
+//		int sum = 0;
+//		while(i<=n) {
+//			System.out.println("i : "+ i);
+//			sum+=i;
+//			i++;
+//		}
+//		System.out.printf("%d 부터 %d 까지 합 : %d\n", 1,n,sum);
+//		
+//		sc.close();
+		
 		// N 부터 M까지의 합(N<M)
+
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		int m = sc.nextInt();
+//		
+//		//SWAP
+//		if(n>m) {
+//			int tmp = n;
+//			n = m;
+//			m = tmp;
+//		}
+//		
+//		int i=n;
+//		int sum = 0;
+//		while(i<=m) {
+//			System.out.println("i : "+ i);
+//			sum+=i;
+//			i++;
+//		}
+//		System.out.printf("%d 부터 %d 까지 합 : %d\n", 1,n,sum);
+//		
+//		sc.close();
+		
 		// N 부터 M까지 범위에서 짝수의 합과 홀수의 합 구해서 출력 (N<M)
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		int m = sc.nextInt();
+//		
+//		//SWAP
+//		if(n>m) {
+//			int tmp = n;
+//			n = m;
+//			m = tmp;
+//		}
+//		
+//		int i=n;
+//		int sum = 0;
+//		int odd = 0; //홀수의합
+//		int even = 0; //짝수의합
+//		
+//		while(i<=m) {
+//			System.out.println("i : "+ i);
+//			
+//			if(i%2==0) even+=i; else odd+=i;
+//			
+//			i++;
+//		}
+//		System.out.printf("%d 부터 %d 까지 홀수합 : %d 짝수합 : %d\n", n,m,odd,even);
+//		
+//		sc.close();	
+		
 		// 구구단 2 x 1 = 1 , 2 x 9 = 18 찍기
+		
+//		int i=1;
+//		int dan = 2;
+//		while(i<10) {
+//			System.out.printf("%d x %d = %d\n", dan,i, dan*i);
+//			i++;
+//		}
+		
+		
 		// 구구단 N단 받아서 찍어보기
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int i=1;
+		int dan = n;
+		while(i<10) {
+			System.out.printf("%d x %d = %d\n", dan,i, dan*i);
+			i++;
+		}
 	}
 
 }
