@@ -23,15 +23,18 @@ public class C02Ex {
 		//키보드로 부터 정수값 2개를 입력받아
 		//두수의 합이 짝수이면 "짝수입니다"
 		//홀수이면 "홀수입니다" 를 출력하세요~
+//
+//		Scanner sc = new Scanner(System.in);
+//		
+//		int n1 = sc.nextInt();
+//		int n2 = sc.nextInt();
+//		String result = ((n1+n2) % 2 == 0)?"짝수":"홀수";
+//		System.out.println("결과 : " + result);
+//		
+//		sc.close();
+		
 
-		Scanner sc = new Scanner(System.in);
-		
-		int n1 = sc.nextInt();
-		int n2 = sc.nextInt();
-		String result = ((n1+n2) % 2 == 0)?"짝수":"홀수";
-		System.out.println("결과 : " + result);
-		
-		sc.close();
+				
 	}
 
 }
