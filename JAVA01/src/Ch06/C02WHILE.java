@@ -277,19 +277,21 @@ public class C02WHILE {
 //		i++			j++
 //		i<h			j<=(h-1)-i
 				
-		int i=0;
-		while(i<4) {
-			
-			int j=0;
-			while(j<=3-i) {
-				System.out.print("*");
-				j++;
-			}
-			
-			System.out.println();
-			i++;
-		}
-		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {
+//			
+//			int j=0;
+//			while(j<=(h-1)-i) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
 		
 		//6)
 		//높이 : 4
