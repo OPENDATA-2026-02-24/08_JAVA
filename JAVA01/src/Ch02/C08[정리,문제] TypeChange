@@ -145,7 +145,7 @@ System.out.println(str3);
 [예시]
 ----------------------------
  byte value =	_________("10");
- int value = 	_________("100);
+ int value = 	_________("100");
  float value =	_________("20.5");
  double value =	_________("3.14159");
 ----------------------------
@@ -188,3 +188,21 @@ Byte.parseByte
  Integer.parseInt
  Float.parseFloat
  Double.parseDouble
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

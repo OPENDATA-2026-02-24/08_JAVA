@@ -1,13 +1,13 @@
-//package Ch06;
-//
-//import java.util.Scanner;
-//
-//public class C02WHILE {
-//	
-//	public static void main(String[] args) {
-		
+package Ch06;
+
+import java.util.Scanner;
+
+public class C02WHILE {
+
+	public static void main(String[] args) {
+
 		// 2 - 9 단 출력
-		
+
 //		dan		i
 //		2		1
 //				2
@@ -17,7 +17,7 @@
 //		dan=2		i=1
 //		dan++		i++
 //		dan<10		i<10
-		
+
 //		int dan = 2;
 //		while(dan<10) {
 //			
@@ -30,7 +30,7 @@
 //			System.out.println();
 //			dan++;
 //		}
-		
+
 		// N - 9 단 출력
 //		Scanner sc = new Scanner(System.in);
 //		int n = sc.nextInt();
@@ -47,9 +47,9 @@
 //			dan++;
 //		}
 //		sc.close();
-		
+
 		// N - M 단 출력(N<M, N>=2 && N<=9, M>2 && M<10)
-		
+
 //		Scanner sc = new Scanner(System.in);
 //		int n = sc.nextInt();
 //		int m = sc.nextInt();
@@ -75,10 +75,9 @@
 //			dan++;
 //		}
 //		sc.close();
-		
 
 		// N - M 단 출력 거꾸로 9 x 9 , 9 x 8 ....
-	
+
 //		dan		i
 //		n , m(n<m)
 //		m		9
@@ -98,7 +97,7 @@
 //		dan=m		i=9
 //		dan--		i--
 //		dan>n-1		i>0
-		
+
 //		Scanner sc = new Scanner(System.in);
 //		int n = sc.nextInt();
 //		int m = sc.nextInt();
@@ -124,13 +123,24 @@
 //			dan--;
 //		}
 //		sc.close();
-		
-		// 1) 고정높이 
-				// *****
-				// *****
-				// *****
-				// *****
-//		int i = 0;
+
+		// 1) 고정높이
+		// *****
+		// *****
+		// *****
+		// *****
+
+//		i(행)	j(별)
+//		0		0-4
+//		1		0-4
+//		2		0-4
+//		3		0-4
+//		---------------
+//		i=0		j=0
+//		i++		j++
+//		i<4		j<5
+
+//		int i=0;
 //		while(i<4) {
 //			
 //			int j=0;
@@ -141,19 +151,31 @@
 //			System.out.println();
 //			i++;
 //		}
-		
-		
-				
-				// 2)
-				// 높이 : 4 
-				// *****
-				// *****
-				// *****
-				// *****
-//			Scanner sc = new Scanner(System.in);
-//			int h = sc.nextInt();
-//			int i=0;
-//			while(i<h) {
+
+		// 2)
+		// 높이 : 4
+		// *****
+		// *****
+		// *****
+		// *****
+//		높이 : h
+//
+//		i(행)	j(별)
+//		0		0-4
+//		1		0-4
+//		2		0-4
+//		3		0-4
+//		..
+//		h-1		0-4
+//		---------------
+//		i=0		j=0
+//		i++		j++
+//		i<h		j<5
+
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {
 //			
 //			int j=0;
 //			while(j<5) {
@@ -163,300 +185,409 @@
 //			System.out.println();
 //			i++;
 //		}
-//			sc.close();
-		
+//		sc.close();
 
-				// 3) 고정높이
-				// * 
-				// ** 
-				// *** 
-				// ****
-//				int i = 0;
-//				while(i < 4) {
-//				int j = 0;
-//				
-//				while(j<=i) {
-//					System.out.print("*");
-//					j++;
-//				}
-//				System.out.println();
-//				i++;
-//			}
-				
-				// 4)
-				// 높이 : 4 
-				// * 
-				// ** 
-				// *** 
-				// ****
-//				Scanner sc = new Scanner(System.in);
-//				System.out.print("높이 : ");
-//				int height = sc.nextInt();
-//				
-//				int i = 0;
-//				while(i < height) {
-//					int j = 0;
-//					
-//					while(j<=i) {
-//						System.out.print("*");
-//						j++;
-//					}
-//					System.out.println();
-//					i++;
-//				}
-//					sc.close();
-				
-				// 5) 
-				//높이 : 4
-				//****
-				//***
-				//**
-				//*
-//				Scanner sc = new Scanner(System.in);
-//				System.out.print("높이 : ");
-//				int height = sc.nextInt();
-//		
-//				int i = 0;
-//				while(i < height) {
-//					int j = 0;
+		// 3) 고정높이
+		// *
+		// **
+		// ***
+		// ****
+
+//		i(행)	j(별)
+//		0		0-0
+//		1		0-1
+//		2		0-2
+//		3		0-3
+//		------------------
+//		i=0		j=0
+//		i++		j++
+//		i<4		j<=i
+
+//		int i=0;
+//		while(i<4) {
 //			
-//					while(j <height -i) {
-//						System.out.print("*");
-//						j++;
-//					}
-//					System.out.println();
-//					i++;
-//				}
-//				sc.close();
-				
-				//6)
-				//높이 : 4
-				//   *
-				//  ***
-				// *****
-				//*******
-//			Scanner sc = new Scanner(System.in);
-//			System.out.print("높이 : ");
-//			int height = sc.nextInt();
-//
-//			int i = 0;
-//			while(i < height) {
-//			int j = 0;
-//	
-//			while(j <height -i - 1) {
-//				System.out.print(" ");
+//			int j=0;
+//			while(j<=i) {
+//				System.out.print("*");
 //				j++;
 //			}
-//			int k = 0;
-//			while(k < 2 * i + 1) {
+//			System.out.println();
+//			i++;
+//		}
+
+		// 4)
+		// 높이 : 4
+		// *
+		// **
+		// ***
+		// ****
+
+//		i(행)	j(별)
+//		0		0-0
+//		1		0-1
+//		2		0-2
+//		3		0-3
+//		..
+//		h-1		0-(h-1)
+//		------------------
+//		i=0		j=0
+//		i++		j++
+//		i<h		j<=i
+
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {
+//			
+//			int j=0;
+//			while(j<=i) {
 //				System.out.print("*");
-//				k++;
+//				j++;
 //			}
 //			System.out.println();
 //			i++;
 //		}
 //		sc.close();
-		
 
-				//7)
-				//높이 : 4
-				//*******
-				// *****
-				//  ***
-				//   *
+		// 5)
+		// 높이 : 4
+		// ****
+		// ***
+		// **
+		// *
+
+//		i(행)		j(별)
+//		0			0-(h-1)
+//		1			0-(h-1)-1
+//		2			0-(h-1)-2
+//		3			0-(h-1)-3
+//		..
+//		h-1			0-0
+//		---------------------
+//		i=0			j=0
+//		i++			j++
+//		i<h			j<=(h-1)-i
+
 //		Scanner sc = new Scanner(System.in);
-//		System.out.print("높이 : ");
-//		int height = sc.nextInt();
-//
-//		int i = 0;
-//		while(i < height) {
-//		int j = 0;
-//
-//		while(j < i) {
-//			System.out.print(" ");
-//			j++;
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {
+//			
+//			int j=0;
+//			while(j<=(h-1)-i) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			
+//			System.out.println();
+//			i++;
 //		}
-//		int k = 0;
-//		while(k < (2 * (height - i)) -1) {
-//			System.out.print("*");
-//			k++;
-//		}
-//		System.out.println();
-//		i++;
-//	}
-//	sc.close();
+//		sc.close();
 
-				//8) 고정높이
-				//   *
-				//  ***
-				// *****
-				//*******
-				// *****
-				//  ***
-				//   *
-//				int height = 4;
-//				
-//				int i = 0;
-//				while(i < height) {
-//					
-//					int j = 0;
-//					while(j < height -i -1) {
-//						System.out.print(" ");
-//						j++;
-//					}
-//					int k = 0;
-//					while(k < 2 * i + 1) {
-//						System.out.print("*");
-//						k++;
-//				}
-//					System.out.println();
-//					i++;
+		// 6)
+		// 높이 : 4
+		// *
+		// ***
+		// *****
+		// *******
+
+// 고정높이(h : 4)
+//		i(행)		j(공백)		k(별)
+//		0			0-2			0-0
+//		1			0-1			0-2
+//		2			0-0			0-4
+//		3			x			0-6
+//		-------------------------------------
+//		i=0			j=0			k=0
+//		i++			j++			k++
+//		i<4			j<3-i		k<=i*2
+
+//		int i=0;
+//		while(i<4) {	
+//			//공백
+//			int j=0;
+//			while(j<3-i) {
+//				System.out.print(" ");
+//				j++;
 //			}
-//				i = height -2;
-//				while(i>=0) {
-//					int j = 0;
-//					while(j < height -i -1) {
-//						System.out.print(" ");
-//						j++;
-//					}
-//					int k = 0;
-//					while(k < 2 * i + 1) {
-//						System.out.print("*");
-//						k++;
-//				}
-//					System.out.println();
-//					i--;
+//			//별
+//			int k=0;
+//			while(k<=i*2) {
+//				System.out.print("*");
+//				k++;
+//			}		
+//			System.out.println();
+//			i++;
+//		}
+
+// 높이  : h		
+//		i(행)		j(공백)			k(별)
+//		0			0~(h-2)-0		0~0
+//		1			0~(h-2)-1		0~2
+//		2			0~(h-2)-2		0~4
+//		3			0~(h-2)-3		0~6
+//		...
+//		h-1			0~(h-2)-(h-1)
+//		------------------------------------
+//		i=0			j=0				k=0	
+//		i++			j++				k++
+//		i<h			j<(h-1)-i		k<=i*2
+
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {	
+//			//공백
+//			int j=0;
+//			while(j<(h-1)-i) {
+//				System.out.print(" ");
+//				j++;
 //			}
-				
-				
-				//9)
-				//높이 : 7
-				//   *
-				//  ***
-				// *****
-				//*******
-				// *****
-				//  ***
-				//   *
-//				Scanner sc = new Scanner(System.in);
-//				int height;
+//			//별
+//			int k=0;
+//			while(k<=i*2) {
+//				System.out.print("*");
+//				k++;
+//			}		
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
+
+		// 7)
+		// 높이 : 4
+		// *******
+		// *****
+		// ***
+		// *
+
+		// 고정높이
+//		i(행)		j(공백)		k(별)
+//		0			x			0-6
+//		1			0-0			0-4
+//		2			0-1			0-2
+//		3			0-2			0-0
+//		---------------------------------------
+//		i=0			j=0			k=0
+//		i++			j++			k++
+//		i<4			j<=i-1		k<=(3*2)-2*i
+
+//		int i=0;
+//		while(i<4) {
+//			
+//			//공백
+//			int j=0;
+//			while(j<=i-1) {			
+//				System.out.print(" ");
+//				j++;
+//			}
+//			//별
+//			int k=0;
+//			while(k<=(3*2)-2*i) {
+//				System.out.print("*");
+//				k++;
+//			}	
+//			System.out.println();
+//			i++;
+//		}
+
+		// 높이 : h
+
+//		i(행)		j(공백)		k(별)
+//		0			x			0-((h-1)*2)-2*0
+//		1			0-0			0-((h-1)*2)-2*1
+//		2			0-1			0-((h-1)*2)-2*2
+//		3			0-2			0-0
+//		...
+//		h-1
+//		---------------------------------------
+//		i=0			j=0			k=0
+//		i++			j++			k++
+//		i<h			j<i-1		k<=((h-1)*2)-2*i
+
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {
+//			
+//			//공백
+//			int j=0;
+//			while(j<=i-1) {			
+//				System.out.print(" ");
+//				j++;
+//			}
+//			//별
+//			int k=0;
+//			while(k<=((h-1)*2)-2*i) {
+//				System.out.print("*");
+//				k++;
+//			}	
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
+
+		// 8) 고정높이
+		// *
+		// ***
+		// *****
+		// *******
+		// *****
+		// ***
+		// *
+
+//		i(행)		j(공백)		k(별)
+//		0			0-2			0-0
+//		1			0-1			0-2
+//		2			0-0			0-4
+//		3			x			0-6
+//		---------------------------------------
+//		i<4			j=0			k=0
+//					j++			k++
+//					j<3-i		k<=2*i
+//			
+//		---------------------------------------
+//		4			0-0			0-4
+//		5			0-1			0-2
+//		6			0-2			0-0
+//		---------------------------------------
+//		i>=4		j=0			k=0
+//					j++			k++
+//					j<=i-4		k<=(6*2)-i*2
+//		---------------------------------------
+//		i=0
+//		i++
+//		i<7
+
+//		int i=0;
+//		while(i<7) {
+//			
+//			if(i<4) {
 //				
-//				while (true) {
-//					System.out.print("높이 : ");
-//					height = sc.nextInt();
-//				
-//				if (height < 3) {
-//					System.out.println("3 이상 입력하세요 ");
-//				}	else if(height % 2 == 0) {
-//						System.out.println("홀수만 입력하세요 ");
-//					}
-//					else{
-//						break;
-//					}
-//	}
-//				
-//				int mid = height / 2;
-//				
-//				int i = 0;
-//				while(i<=mid) {
-//					
-//					int j = 0;
-//					while(j < mid -i) {
+//				//공백
+//				int j=0;
+//				while(j<3-i) {
 //					System.out.print(" ");
 //					j++;
 //				}
-//				int k = 0;
-//				while(k < 2 * i + 1) {
+//				//별
+//				int k=0;
+//				while(k<=2*i) {
 //					System.out.print("*");
 //					k++;
 //				}
-//				System.out.println();
-//				i++;
-//	}
 //				
-//				i = mid -1;
-//				while(i>=0) {
-//					int j = 0;
-//					while(j < mid - i) {
-//						System.out.print(" ");
-//						j++;
-//					}
-//					int k = 0;
-//					while(k < 2 * i + 1) {
-//						System.out.print("*");
-//						k++;
-//					}
-//					System.out.println();
-//					i--;
-//					
-//				}
-
-				
-				
-				
-				// 10)
-				// 높이 : 7
-				//*******
-				// *****
-				//  ***
-				//   *
-				//  ***
-				// *****
-				//*******
-//				Scanner sc = new Scanner(System.in);
-//				int height;
+//			}else {
 //		
-//				while (true) {
-//					System.out.print("높이 : ");
-//					height = sc.nextInt();
-//		
-//					if (height < 3) {
-//						System.out.println("3 이상 입력하세요 ");
-//					} else if(height % 2 == 0) {
-//						System.out.println("홀수만 입력하세요 ");
-//					} else{
-//						break;
-//					}
+//				//공백
+//				int j=0;
+//				while(j<=i-4) {
+//					System.out.print(" ");
+//					j++;
 //				}
-//					int mid = height / 2;
-//					
-//					int i = 0;
-//					while(i<=mid) {
-//						
-//						int j = 0;
-//						while(j < i) {
-//						System.out.print(" ");
-//						j++;
-//					}
-//						
-//					int k = 0;
-//					while(k < height - 2 * i) {
-//						System.out.print("*");
-//						k++;
-//					}
-//					
-//					System.out.println();
-//					i++;
+//				//별
+//				int k=0;
+//				while(k<=(6*2)-i*2) {
+//					System.out.print("*");
+//					k++;
+//				}
+//				
+//			}
+//			
+//			
+//			System.out.println();
+//			i++;
+//			
 //		}
-//					
-//					i = mid -1;
-//					while(i>=0) {
-//						int j = 0;
-//						while(j < i) {
-//							System.out.print(" ");
-//							j++;
-//						}
-//						
-//						int k = 0;
-//						while(k < height - 2 * i) {
-//							System.out.print("*");
-//							k++;
-//						}
-//						System.out.println();
-//						i--;
-//						
-//					}
-//				sc.close();
+
+		// 9)
+		// 높이 : 7
+		// *
+		// ***
+		// *****
+		// *******
+		// *****
+		// ***
+		// *
+
+//		높이 : h
+//		i(행)		j(공백)		k(별)
+//		0			0-2			0-0
+//		1			0-1			0-2
+//		2			0-0			0-4
+//		3			x			0-6
+//		---------------------------------------
+//		i<=h/2		j=0			k=0
+//					j++			k++
+//					j<(h/2)-i	k<=2*i
+//			
+//		---------------------------------------
+//		4			0-0			0-4
+//		5			0-1			0-2
+//		6			0-2			0-0
+//		---------------------------------------
+//					j=0			k=0
+//					j++			k++
+//					j<i-h/2		k<=((h-1)*2)-i*2
+//		---------------------------------------
+//		i=0
+//		i++
+//		i<h
+		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		//h%2==1 && h>1
+//		//h%2==0 || h<=1
+//		while(h%2==0 || h<=1) {
+//			System.out.print("다시 입력(홀수) : ");
+//			h=sc.nextInt();
+//		}
+//		
+//		int i = 0;
+//		while (i<h) {
+//			if (i<=h/2) {
+//				// 공백
+//				int j = 0;
+//				while (j<(h/2)-i) {
+//					System.out.print(" ");
+//					j++;
+//				}
+//				// 별
+//				int k = 0;
+//				while (k <= 2 * i) {
+//					System.out.print("*");
+//					k++;
+//				}
+//			} else {
+//				// 공백
+//				int j = 0;
+//				while (j<i-h/2) {
+//					System.out.print(" ");
+//					j++;
+//				}
+//				// 별
+//				int k = 0;
+//				while (k<=((h-1)*2)-i*2) {
+//					System.out.print("*");
+//					k++;
+//				}
+//			}
+//			System.out.println();
+//			i++;
 //
 //		}
-//	}
+//		sc.close();
+		
+		// 10)
+		// 높이 : 7
+		// *******
+		//  *****
+		//   ***
+		//    *
+		//   ***
+		//  *****
+		// *******
+
+	}
+
+}

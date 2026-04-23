@@ -43,13 +43,13 @@ public class C03Percent {
 //		Random rnd = new Random();
 //		
 //		while (true) {
-//			System.out.println(rnd.nextInt(45)  + 1); //N%5 과 동일 (0~44)
+//			System.out.println(rnd.nextInt(45) + 1 ); //N%5 과 동일 (0~44)
 //			Thread.sleep(500);
 //		}
 
 		// 02 Math.random();
 //		while (true) {
-//			System.out.println( (int)(Math.random()*100)%15 );
+//			System.out.println( (int)(Math.random()*100)%16 );
 ////			System.out.println((int)(Math.random()*100)%16);
 //			Thread.sleep(500);
 //		}
