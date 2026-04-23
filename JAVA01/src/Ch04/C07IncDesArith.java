@@ -12,7 +12,5 @@ public class C07IncDesArith {
 		b=0;
 		e=(a++>0)||((b*d/c)>0);
 		System.out.printf("a = %d, b = %d, c = %d, d = %d ,e = %b\n", a, b, c, d , e);
-		
-		
 	}
 }	

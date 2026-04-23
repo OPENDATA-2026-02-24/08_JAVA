@@ -140,14 +140,8 @@ public class C01WHILE {
 		int dan = n;
 		while(i>0) {
 			System.out.printf("%d x %d = %d\n", dan,i, dan*i);
-			i--;
+			i++;
 		}
 	}
 
 }
-
-
-
-
-
-
