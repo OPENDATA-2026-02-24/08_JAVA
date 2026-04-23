@@ -345,23 +345,26 @@ public class C02WHILE {
 //		i<h			j<(h-1)-i		k<=i*2
 		
 
-		int i=0;
-		while(i<4) {	
-			//공백
-			int j=0;
-			while(j<3-i) {
-				System.out.print(" ");
-				j++;
-			}
-			//별
-			int k=0;
-			while(k<=i*2) {
-				System.out.print("*");
-				k++;
-			}		
-			System.out.println();
-			i++;
-		}
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0;
+//		while(i<h) {	
+//			//공백
+//			int j=0;
+//			while(j<(h-1)-i) {
+//				System.out.print(" ");
+//				j++;
+//			}
+//			//별
+//			int k=0;
+//			while(k<=i*2) {
+//				System.out.print("*");
+//				k++;
+//			}		
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
 		
 		//7)
 		//높이 : 4
