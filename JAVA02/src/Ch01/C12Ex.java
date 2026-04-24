@@ -34,15 +34,11 @@ class Buyer{
 
 		//판매자에게 구매의사금액 전달
 		//판매자는 구매자에게 사과개수 전달
-		int receivedAppCnt;
-		if(myMoney<money) {
-			receivedAppCnt = seller.sales(myMoney);
-			myMoney=0;
-		}else {
-			receivedAppCnt = seller.sales(money);
-			// 내돈에서 구매의사금액만큼 차감 (내보유금액<구매의사금액)
-			myMoney -= money;
-		}
+		int receivedAppCnt = seller.sales(money);
+		
+		// 내돈에서 구매의사금액만큼 차감 (내보유금액<구매의사금액)
+		myMoney -= money;
+		
 		//사과개수를 현재 사과보유개수에 누적
 		this.appleCnt+= receivedAppCnt;
 	}
@@ -69,8 +65,9 @@ class Seller{
 		//구매자로 부터 받은 금액만큼 사과개수를 계산
 		int calAppCnt = money/price;
 		
-		//판매자의 보유 사과개수에서 차감(!)
+		//판매자의 보유 사과개수에서 차감(보유사과개수 vs 구매자 요청사과개수)
 		appleCnt-=calAppCnt;
+
 		
 		//계산된 사과개수를 반환
 		return calAppCnt;

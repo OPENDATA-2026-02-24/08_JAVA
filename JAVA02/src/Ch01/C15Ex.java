@@ -30,6 +30,7 @@ package Ch01;
 //
 //기능	: 발권하기(관객의 돈) : 티켓개수
 //		  issue(int money) : int
+
 public class C15Ex {
 
 	public static void main(String[] args) {
