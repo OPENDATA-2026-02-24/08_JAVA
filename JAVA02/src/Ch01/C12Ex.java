@@ -18,14 +18,103 @@ package Ch01;
 //기능	: 판매하기(구매자의 돈) : 사과개수
 //		  sales(int money) : int
 
-class Buyer{}
-class Seller{}
+class Buyer{
+	private int myMoney;
+	private int appleCnt;
+	
+	//생성자
+	public Buyer(int myMoney, int appleCnt) {
+		super();
+		this.myMoney = myMoney;
+		this.appleCnt = appleCnt;
+	}
+	
+	public void pay(Seller seller , int money){
+
+
+		//판매자에게 구매의사금액 전달
+		//판매자는 구매자에게 사과개수 전달
+		int receivedAppCnt;
+		if(myMoney<money) {
+			receivedAppCnt = seller.sales(myMoney);
+			myMoney=0;
+		}else {
+			receivedAppCnt = seller.sales(money);
+			// 내돈에서 구매의사금액만큼 차감 (내보유금액<구매의사금액)
+			myMoney -= money;
+		}
+		//사과개수를 현재 사과보유개수에 누적
+		this.appleCnt+= receivedAppCnt;
+	}
+	
+	//toString
+	@Override
+	public String toString() {
+		return "Buyer [myMoney=" + myMoney + ", appleCnt=" + appleCnt + "]";
+	}
+
+
+
+	
+}
+class Seller{
+	private int myMoney;
+	private int appleCnt;
+	private int price;
+	
+	public int sales(int money){
+		//구매자로 부터 받은 금액을 내 보유금액에 누적
+		this.myMoney+=money;
+		
+		//구매자로 부터 받은 금액만큼 사과개수를 계산
+		int calAppCnt = money/price;
+		
+		//판매자의 보유 사과개수에서 차감(!)
+		appleCnt-=calAppCnt;
+		
+		//계산된 사과개수를 반환
+		return calAppCnt;
+	}
+	
+	//생성자
+	//toString
+	public Seller(int myMoney, int appleCnt, int price) {
+		super();
+		this.myMoney = myMoney;
+		this.appleCnt = appleCnt;
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "Seller [myMoney=" + myMoney + ", appleCnt=" + appleCnt + ", price=" + price + "]";
+	}
+	
+}
 
 public class C12Ex {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//고객
+		Buyer 홍길동 = new Buyer(100000,0);
+		Buyer 남길동 = new Buyer(50000,0);
+		
+		//사과장수
+		Seller 사과장수1 = new Seller(100000,100,1000);
+		
+		//고객 - 구매요청 -> 사과장수
+		홍길동.pay(사과장수1, 20000);
+		남길동.pay(사과장수1, 10000);
+		
+		
+		System.out.println(홍길동);
+		System.out.println(남길동);
+		System.out.println(사과장수1);
 
 	}
 
 }
+
+
+
+
