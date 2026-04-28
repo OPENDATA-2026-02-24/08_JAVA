@@ -6,6 +6,7 @@ package Ch05;
 //명품자바 상속문제
 //https://cs-ssupport.tistory.com/84
 
+
 //[1번] 다음 main() 메소드와 실행 결과를 참고하여 TV를 상속받은 ColorTV 클래스를 작성하라.
 class TV{
 	String brandName;
@@ -23,8 +24,20 @@ class TV{
 	}
 	
 }
-class ColorTV{
+class ColorTV extends TV{
+	String color;
 	
+	public ColorTV(String brandName, int year, int inch,String color) {
+		super(brandName, year, inch);
+		this.color = color;
+	}
+
+	public void printProperty() {
+		System.out.printf("%s %d년형 %d인치 %s\n",this.brandName,this.year,this.inch,this.color);
+		
+	}
+
+
 }
 
 
