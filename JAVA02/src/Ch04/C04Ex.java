@@ -1,10 +1,20 @@
 package Ch04;
 
+import java.util.Arrays;
+
 //다음 2개의 static 가진 ArrayUtils 클래스를 만들어보자. concat()와 print()를 작성하여 ArrayUtil 클래스를 완성하라.
 class ArrayUtils {
 	   public static int[] concat(int[] a, int[] b) {
 	        /* 배열 a와 b를 연결한 새로운 배열 리턴 */
-		   return null;
+		   int desc [] = new int [a.length + b.length];
+		   for(int i=0;i<a.length;i++) {
+			   desc[i] = a[i];
+		   }
+		   for(int j=0;j<b.length;j++) {
+			   desc[j+a.length] = b[j];
+		   }
+
+		   return desc;
 	   }  
 	   public static void print(int [] a) {
 		   /* 
@@ -12,6 +22,7 @@ class ArrayUtils {
 		    * ex. a [] = {10,20,30,40}
 		    * 출력 : 10 20 30 40
 		    *  */		   
+		   Arrays.stream(a).forEach((el)->{System.out.println(el);});
 	   }
 }
 
