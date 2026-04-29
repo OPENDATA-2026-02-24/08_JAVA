@@ -16,15 +16,16 @@ public class Main {
 	
 	
 	public static void init () {
-//        정승원_sum = new Ch08.Team0.impl.정승원.SumImpl();
-//        박한결_sum = new Ch08.Team0.impl.박한결.SumImpl();
-//        김선길_sum = new Ch08.Team0.impl.김선길.SumImpl();
-//        박형규_sum = new Ch08.Team0.impl.박형규.SumImpl();
-//        강현욱_sum = new Ch08.Team0.impl.강현욱.SumImpl();
-//        김정희_sum = new Ch08.Team0.impl.김정희.SumImpl();
-//        박영준_sum = new Ch08.Team0.impl.박영준.SumImpl();
+        정승원_sum = (SumInterface) new Ch08.Team0.Impl.정승원.SumImpl();
+        
+        박한결_sum = (SumInterface) new Ch08.Team0.Impl.박한결.SumImpl();
+        김선길_sum = (SumInterface) new Ch08.Team0.Impl.김선길.SumImpl();
+        박형규_sum = (SumInterface) new Ch08.Team0.Impl.박형규.SumImpl();
+        강현욱_sum = (SumInterface) new Ch08.Team0.Impl.강현욱.SumImpl();
+        김정희_sum = (SumInterface) new Ch08.Team0.Impl.김정희.SumImpl();
+        박영준_sum = (SumInterface) new Ch08.Team0.Impl.박영준.SumImpl();
 //	
-	}
+		}
 	public static void test_sum(SumInterface sumImpl) {
 		Information info = (Information)sumImpl;
 		System.out.printf("======= %s========\n", info.getTeamName());
