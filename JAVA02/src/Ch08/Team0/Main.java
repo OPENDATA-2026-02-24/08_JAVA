@@ -23,7 +23,8 @@ public class Main {
 //        강현욱_sum = new Ch08.Team0.impl.강현욱.SumImpl();
 //        김정희_sum = new Ch08.Team0.impl.김정희.SumImpl();
 //        박영준_sum = new Ch08.Team0.impl.박영준.SumImpl();
-//	}
+//	
+	}
 	public static void test_sum(SumInterface sumImpl) {
 		Information info = (Information)sumImpl;
 		System.out.printf("======= %s========\n", info.getTeamName());
