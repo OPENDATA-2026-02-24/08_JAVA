@@ -22,9 +22,16 @@ public class C09Ex01BasicUpCasting {
         System.out.println("=== 연습문제 1: 기본 업캐스팅 ===");
         // 문제: 다음 코드를 완성하세요
         // 1. Dog 인스턴스를 생성하세요
+        Dog dog1 =  new Dog();
         // 2. 생성한 Dog 인스턴스를 Animal 타입으로 업캐스팅하세요
+        Animal ani = dog1;
         // 3. 업캐스팅된 참조로 makeSound() 메서드를 호출해보세요
+        ani.makeSound();
         // 4. 업캐스팅된 참조로 fetch() 메서드를 호출해보고 결과를 확인하세요
- 
+        Dog down = (Dog)ani;
+        down.fetch();
+        
+        ((Dog)ani).fetch();
+        
     }
 } 
