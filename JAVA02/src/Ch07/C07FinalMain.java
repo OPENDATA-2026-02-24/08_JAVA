@@ -25,9 +25,7 @@ final class Son extends Parent{
 //{
 //	
 //}
-final interface test{
-	
-}
+
 
 public class C07FinalMain {
 
