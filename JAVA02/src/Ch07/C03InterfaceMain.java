@@ -11,6 +11,10 @@ interface Remocon{
 	void setVolumn(int vol);
 }
 
+interface Browser{
+	void searchURL(String url);
+}
+
 class Tv implements Remocon {
 
 	private int volumn;
@@ -35,11 +39,20 @@ class Tv implements Remocon {
 			this.volumn = vol;	
 		}
 		
-		System.out.println("TV 현재 볼륨 : " + this.volumn);
-		
+		System.out.println("TV 현재 볼륨 : " + this.volumn);	
+	}
+}
+
+class SmartTv extends Tv implements Browser{
+
+	@Override
+	public void searchURL(String url) {
+		System.out.println(url+" 로 이동합니다.");
 	}
 	
 }
+
+
 class Radio implements Remocon{
 
 	private int volumn;
@@ -81,27 +94,38 @@ public class C03InterfaceMain {
 	}
 	public static void TurnOff(Remocon remocon) 
 	{
-		remocon.powerOn();
+		remocon.powerOff();
 	}	
 	public static void ChangeVolumn(Remocon remocon,int vol) {
 		remocon.setVolumn(vol);
 	}
+	public static void WebBrowser(Browser browser,String url) {
+		browser.searchURL(url);
+	}
+	
 	public static void main(String[] args) {
 		
 		Tv tv = new Tv();
 		Radio radio = new Radio();
+		SmartTv smartTv = new SmartTv();
 		
 		//ON
-		TurnOn(tv);
-		TurnOn(radio);
+//		TurnOn(tv);
+//		TurnOn(radio);
+		TurnOn(smartTv);
 		
 		//VOLUMN
-		ChangeVolumn(tv,50);
-		ChangeVolumn(radio,200);
+//		ChangeVolumn(tv,50);
+//		ChangeVolumn(radio,200);
+		ChangeVolumn(smartTv,50);
+		
+		//Browser
+		WebBrowser(smartTv, "https://naver.com");
 		
 		//OFF
-		TurnOff(tv);
-		TurnOff(radio);
+//		TurnOff(tv);
+//		TurnOff(radio);
+		TurnOff(smartTv);
 		
 	}
 }
