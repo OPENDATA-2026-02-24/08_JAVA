@@ -31,8 +31,8 @@ public class SumImpl implements SumInterface,Information{
 	public void sum(String... arg) {
 		int i = 0;
 		for (String num: arg){
-			int val = lnteger.parselnt(num);
-			i += num;
+			int val = Integer.parseInt(num);
+			i += val;
 		System.out.println(i);		
 		}
 		
