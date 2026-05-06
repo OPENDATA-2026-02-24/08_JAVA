@@ -36,7 +36,7 @@ public class C03SetMain {
 			System.out.println(el);
 		}
 		
-		
+		set.clear();	//전체삭제
 	}
 
 }
