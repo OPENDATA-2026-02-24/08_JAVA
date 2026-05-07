@@ -60,9 +60,14 @@ public class C10SeleniumAPIMain {
 		
 		Thread.sleep(500);
 		
-//		//네이버포털 -> '노트북'검색 -> 쇼핑 클릭-> 삼성 노트북(엔터) -> 리뷰 많은순 클릭
-		WebElement El =  driver.findElement(By.cssSelector(".subFilter_sort_box__js3FA a:nth-child(6)"));
+////		//네이버포털 -> '건조기'검색 -> 쇼핑 클릭-> 삼성 건조기(엔터) -> 리뷰 많은순 클릭
+		WebElement El =  driver.findElement(By.cssSelector(".basicTypeFilter_finder_tit_list__Ufmtp>li>button"));
 		El.click();
+		
+		Thread.sleep(1500);
+		
+		WebElement El2 =  driver.findElement(By.cssSelector(".subFilter_sort__4Q_hv:nth-child(4)"));
+		El2.click();
 //		
 //		//영역내 모든 정보 긁어오기 basicList_list_basis__uNBZx
 		List<WebElement> El2s =  driver.findElements(By.cssSelector(".basicList_list_basis__XVx_G"));
