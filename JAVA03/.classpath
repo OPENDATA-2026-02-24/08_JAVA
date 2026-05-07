@@ -12,5 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/Ch06/jsoup-1.22.2.jar"/>
+	<classpathentry kind="lib" path="src/Ch06/selenium-server-4.43.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
