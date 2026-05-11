@@ -4,10 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Savepoint;
 
-public class C07OPENDATA_JDBC {
+public class C08TxMain {
 
 	public static void main(String[] args) {
 		//DB CONN DATA
@@ -20,7 +19,11 @@ public class C07OPENDATA_JDBC {
 		PreparedStatement pstmt = null;	// SQL Query 전송용 객체
 		ResultSet rs = null;			// Select 결과물 담을 객체
 		
-		try {
+		Savepoint sp1 = null;
+		
+		try {	
+
+			
 			//
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver Loading Success...");
@@ -28,34 +31,49 @@ public class C07OPENDATA_JDBC {
 			//
 			conn = DriverManager.getConnection(url,id,pw);
 			System.out.println("DB CONNECTED...");
-
+			
+			// TX START
+			conn.setAutoCommit(false);
 			//
-			pstmt = conn.prepareStatement("select * from tbl_parking");
-	
+			pstmt = conn.prepareStatement("insert into tbl_a values(1,'a')");
+			pstmt.executeUpdate();
 			
-			//sql를 dbms 로 전달
-			rs = pstmt.executeQuery();
+			sp1 = conn.setSavepoint("sp1");
 			
-			List<C07ParkingDto> list = new ArrayList();
-			C07ParkingDto dto = null;
+			pstmt = conn.prepareStatement("insert into tbl_a values(2,'b')");
+			pstmt.executeUpdate();
 			
-			while(rs.next()) {
-				dto = new C07ParkingDto();
-				dto.set과태료부과일자(rs.getString("과태료부과일자"));
-				dto.set데이터기준일자(rs.getString("데이터기준일자"));
-				dto.set위반구분(rs.getString("위반구분"));
-				dto.set위반일시(rs.getString("위반일시"));
-				dto.set위반장소(rs.getString("위반장소"));
+			
+			
+			pstmt = conn.prepareStatement("insert into tbl_a values(3,'c')");
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement("insert into tbl_a values(3,'d')");
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement("insert into tbl_a values(5,'e')");
+			pstmt.executeUpdate();
+			
+			//
+			conn.commit();
 				
-				list.add(dto);
-			}
-			
-			list.forEach(System.out::println);
 			
 		}catch(Exception e){
 			e.printStackTrace();
+			
+			try{
+			
+				if(sp1!=null)
+					conn.rollback(sp1);
+				else
+					conn.rollback();
+				
+				conn.commit();
+				
+	
+			}catch(Exception rollback) {rollback.printStackTrace();}
+			
 		}finally {
-			try{rs.close();}catch(Exception e2) {e2.printStackTrace();}
 			try{pstmt.close();}catch(Exception e2) {e2.printStackTrace();}
 			try{conn.close();}catch(Exception e2) {e2.printStackTrace();}
 		}
