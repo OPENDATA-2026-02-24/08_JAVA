@@ -22,7 +22,6 @@ public class ServerBackground {
 		
 	}
 	
-	
 	public void Setting() {
 		try {
 			
