@@ -14,7 +14,7 @@ public class ClientMain {
 
 	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
 		//
-		Socket server = new Socket("192.168.5.50",8000);
+		Socket server = new Socket("192.168.5.10",9000);
 		System.out.println("[CLIENT] SERVER와의 연결이 완료되었습니다");
 		
 		//

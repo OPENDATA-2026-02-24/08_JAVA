@@ -27,10 +27,14 @@ public class ServerRecvThread implements Runnable{
 				System.out.println("[ERROR] 기타 예외발생 : " + e2.getCause());
 				break;
 			}
-			if (recv.equals("q"))
+			if (recv.equals("q")) {
+				System.out.println("CLIENT q 입력함..while종료!");
 				break;
+			}
 			System.out.println("\n[CLIENT] : " + recv);
 		}
+		
+		System.exit(-1);
 		
 	}
 

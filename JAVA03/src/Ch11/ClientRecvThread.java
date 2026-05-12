@@ -32,6 +32,8 @@ public class ClientRecvThread  implements Runnable{
 			System.out.println("\n[SERVER] : " + recv);
 		}
 		
+		System.exit(-1);
+		
 	}
 
 }
