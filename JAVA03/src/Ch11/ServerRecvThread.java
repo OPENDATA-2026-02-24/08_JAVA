@@ -28,7 +28,7 @@ public class ServerRecvThread implements Runnable{
 			}
 			if (recv.equals("q"))
 				break;
-			System.out.println("[CLIENT] : " + recv);
+			System.out.println("\n[CLIENT] : " + recv);
 		}
 		
 	}

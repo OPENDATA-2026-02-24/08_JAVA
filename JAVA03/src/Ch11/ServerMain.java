@@ -14,7 +14,7 @@ public class ServerMain {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		//서버 소켓 생성
-		ServerSocket server = new ServerSocket(7000);// IP: 서버IP(현재컴퓨터) PORT : 7000
+		ServerSocket server = new ServerSocket(8000);// IP: 서버IP(현재컴퓨터) PORT : 7000
 		System.out.println("[INFO] SERVER SOCKET LISTENING");
 
 		//

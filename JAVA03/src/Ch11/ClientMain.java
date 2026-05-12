@@ -12,9 +12,9 @@ import java.util.Scanner;
 
 public class ClientMain {
 
-	public static void main(String[] args) throws UnknownHostException, IOException {
+	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
 		//
-		Socket server = new Socket("192.168.5.50",7000);
+		Socket server = new Socket("192.168.5.50",8000);
 		System.out.println("[CLIENT] SERVER와의 연결이 완료되었습니다");
 		
 		//
@@ -25,37 +25,55 @@ public class ClientMain {
 		DataInputStream din = new DataInputStream(in);
 		DataOutputStream dout = new DataOutputStream(out);
 		
+		// THREAD
+		ClientRecvThread recvThread = new ClientRecvThread(din);
+		ClientSendThread sendThread = new ClientSendThread(dout);
 		//
-		Scanner sc = new Scanner(System.in);	//키보드입력
-		String send = null; 	// 송신용
-		String recv = null; 	// 수신용
+		Thread th1 = new Thread(recvThread);
+		Thread th2 = new Thread(sendThread);
 		
 		//
-		//
-		while(true) {
-			//Server->Client(수신) - 
-			try {
-				recv = din.readUTF();
-			}catch(EOFException e){
-				System.out.println("[ERROR] 서버가 연결을 끊었습니다.");
-				break;
-			}
-			if(recv.equals("q"))
-				break;
-			System.out.println("[SERVER] : "+recv);
-			
-			
-			System.out.print("[CLIENT (q:종료)] : ");
-			send = sc.nextLine();
-			//Client->Server(송신)
-			dout.writeUTF(send);
-			dout.flush();
-			if(send.equals("q"))
-				break;
-
-		}
+		th1.start();
+		th2.start();
 		
-		sc.close();
+		//
+		th1.join();
+		th2.join();
+		
+		
+		//
+//		Scanner sc = new Scanner(System.in);	//키보드입력
+//		String send = null; 	// 송신용
+//		String recv = null; 	// 수신용
+//		
+//		//
+//		//
+//		while(true) {
+//			//Server->Client(수신) - 
+//			try {
+//				recv = din.readUTF();
+//			}catch(EOFException e){
+//				System.out.println("[ERROR] 서버가 연결을 끊었습니다.");
+//				break;
+//			}
+//			if(recv.equals("q"))
+//				break;
+//			System.out.println("[SERVER] : "+recv);
+//			
+//			
+//			System.out.print("[CLIENT (q:종료)] : ");
+//			send = sc.nextLine();
+//			//Client->Server(송신)
+//			dout.writeUTF(send);
+//			dout.flush();
+//			if(send.equals("q"))
+//				break;
+//
+//		}
+//		
+//		sc.close();
+		
+		
 		dout.close();
 		din.close();
 		out.close();

@@ -1,5 +1,41 @@
 package Ch11;
 
-public class ClientSendThread {
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ClientSendThread  implements Runnable{
+
+	DataOutputStream dout;
+	Scanner sc = new Scanner(System.in);
+
+	public ClientSendThread(DataOutputStream dout) {
+		this.dout = dout;
+	}
+
+	@Override
+	public void run() {
+
+		String send = null; // 송신용
+
+		while (true) {
+			System.out.print("[CLIENT (q:종료)] : ");
+			send = sc.nextLine();
+			// Server->Client(송신)
+			try {
+				dout.writeUTF(send);
+				dout.flush();
+				if (send.equals("q"))
+					break;
+
+			} catch (IOException e) {
+				System.out.print("[EXCEPTION] : " + e.getCause());
+//				e.printStackTrace();
+			}
+			
+		}
+		sc.close();
+
+	}
 
 }
