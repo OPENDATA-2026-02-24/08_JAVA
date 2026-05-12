@@ -125,6 +125,7 @@ class Sgui extends JFrame implements ActionListener, KeyListener {
 
 public class ServerUI {
 
+	
 	public static void main(String[] args) throws Exception {
 		new Sgui();
 	}
