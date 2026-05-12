@@ -24,6 +24,10 @@ class Sgui extends JFrame implements ActionListener, KeyListener {
 	JScrollPane scroll;
 	JTextField txt1;
 
+	//
+	DataInputStream din;
+	DataOutputStream dout;
+
 	Sgui() throws Exception {
 		super("Chat Server"); // 프레임창 제목
 		JPanel pannel = new JPanel(); // 패널 생성
@@ -51,6 +55,27 @@ class Sgui extends JFrame implements ActionListener, KeyListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 종료버튼 사용가능상태
 		setVisible(true); // 프레임창 보여주기
 
+		// 소켓 연결
+
+		// 서버 소켓 생성
+		ServerSocket server = new ServerSocket(6000);// IP: 서버IP(현재컴퓨터) PORT : 7000
+		System.out.println("[INFO] SERVER SOCKET LISTENING");
+		//
+		Socket client = server.accept(); // 1회
+		System.out.println("[INFO] 접속자 IP : " + client.getInetAddress());
+		area.append("[INFO] 접속자 IP : " + client.getInetAddress() + "\n");
+		//
+		InputStream in = client.getInputStream();
+		OutputStream out = client.getOutputStream();
+
+		//
+		din = new DataInputStream(in);
+		dout = new DataOutputStream(out);
+		
+		ServerRecvThread recvThread = new ServerRecvThread(din,this);
+		Thread th1 = new Thread(recvThread);
+		th1.start();
+		
 	}
 
 	@Override
@@ -72,6 +97,20 @@ class Sgui extends JFrame implements ActionListener, KeyListener {
 		if (e.getKeyCode() == 10) // 엔터키 입력
 		{
 			System.out.println("Enter key 입력");
+			// 1 필드의 내용 ->Area
+			area.append("[SERVER] : " + txt1.getText() + "\n");
+
+			//
+			try {
+				dout.writeUTF(txt1.getText());
+				dout.flush();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+
+			//
+			txt1.setText("");
 		}
 	}
 
