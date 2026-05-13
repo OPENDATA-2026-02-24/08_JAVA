@@ -7,6 +7,10 @@ interface Calculator{
 public class C03Ex {
 
 	public static void main(String[] args) {
+		Calculator add = (a,b)->{return a+b;};
+		Calculator sub = (a,b)->{return a-b;};
+		Calculator mul = (a,b)->{return a*b;};
+		Calculator div = (a,b)->{return a/b;};
 		
 		//결과
 		System.out.println(add.calculate(10,20));//덧셈
