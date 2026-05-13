@@ -8,7 +8,7 @@ public class C03Ex {
 
 	public static void main(String[] args) {
 		Calculator add = (a,b)->{return a+b;};
-		Calculator sub = (a,b)->{return a-b;};
+		Calculator sub = (a,b)->{return (a>b)?a-b:b-a;};
 		Calculator mul = (a,b)->{return a*b;};
 		Calculator div = (a,b)->{return a/b;};
 		
