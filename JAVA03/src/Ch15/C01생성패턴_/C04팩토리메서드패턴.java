@@ -11,9 +11,9 @@ package Ch15.C01생성패턴_;
           - OS별 UI 컴포넌트
    ---------------------------------------------------------- */
 
-abstract class Animal {
+abstractnimal {
     public abstract void sound();
-}
+} class A
 
 class Dog extends Animal {
     @Override

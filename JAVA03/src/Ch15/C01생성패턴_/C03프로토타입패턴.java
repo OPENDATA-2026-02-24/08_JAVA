@@ -22,6 +22,10 @@ class Computer implements Cloneable {
 
 public class C03프로토타입패턴 {
 	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		
+		
+		
 		// 1. 원본 객체 생성
 		Computer original = new Computer("Intel i7");
 
