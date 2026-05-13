@@ -1,6 +1,6 @@
-package Ch17;
+package Ch17_;
 
-public class C01Info {
+public class C00Info {
 
 //	자바 스트림(Stream)은 자바 8부터 도입된 기능으로, 
 //	컬렉션(Collection)을 처리하고 변환하기 위한 강력한 기능을 제공합니다. 
