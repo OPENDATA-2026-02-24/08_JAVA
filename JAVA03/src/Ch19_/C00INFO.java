@@ -1,4 +1,4 @@
-package Ch19;
+package Ch19_;
 
 public class C00INFO {
 	//출처: https://ittrue.tistory.com/156 [IT is True:티스토리]
