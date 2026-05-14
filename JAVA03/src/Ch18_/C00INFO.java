@@ -1,4 +1,4 @@
-package Ch18;
+package Ch18_;
 
 public class C00INFO {
 	//함수형 프로그래밍이란 - 유튜브
