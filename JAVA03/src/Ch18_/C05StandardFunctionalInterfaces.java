@@ -13,14 +13,14 @@ package Ch18_;
           - andThen / compose / and / or / negate 같은 조합 메서드 제공
 
    ──────────────────────────────────────────────────────────
-   Ch17 커스텀 인터페이스  →  Ch19 표준 인터페이스 대응표
+   Ch17 커스텀 인터페이스  →  Ch18 표준 인터페이스 대응표
    ──────────────────────────────────────────────────────────
-   Ch17                         |  Ch19 표준                | 메서드
+   Ch17                         |  Ch18 표준                | 메서드
    -----------------------------|---------------------------|----------
    StrToInt   (String → int)    |  Function<String,Integer> | apply
    StrConsumer(String → void)   |  Consumer<String>         | accept
    ListFactory(() → List)       |  Supplier<List<String>>   | get
-   (없음, 새로 보여줌)            |  Predicate<String>        | test
+   (없음, 새로 보여줌)              |  Predicate<String>        | test
    StrCompare (S,S → int)       |  BiFunction<S,S,Integer>  | apply
    ---------------------------------------------------------- */
 
@@ -119,5 +119,8 @@ public class C05StandardFunctionalInterfaces {
 		//       IntFunction / IntConsumer / IntSupplier / IntPredicate ...
 		//       LongFunction / DoubleFunction ...
 		// ----------------------------------------------------
+		
+		
+		
 	}
 }
