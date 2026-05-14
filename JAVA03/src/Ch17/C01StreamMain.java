@@ -1,4 +1,4 @@
-package Ch17_;
+package Ch17;
 
 import java.util.Arrays;
 import java.util.List;
