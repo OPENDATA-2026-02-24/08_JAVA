@@ -18,7 +18,7 @@ public class Rifle extends Gun{
 		}
 		unit.underAttack(this.power);
 		curBuillitCnt--;
-		System.out.println("[정보] "+ unit.getType() + " 에게 "+this.power+" 만큼 피해를 입혔습니다.");
+		System.out.println("[정보] "+ unit.getType() + " 에게 "+this.power+" 만큼 피해를 입혔습니다. 현재HP :"+ unit.getHp() + "현재AMOR : " + unit.getAmor());
 	}
 
 	@Override

@@ -11,14 +11,17 @@ public class Main_01 {
 		Marine marine1 = new Marine();
 		marine1.setMyGun(new Pistol());
 		marine1.getMyGun().reload(100);
+		marine1.attackMethod(Marine.총기사용);
+		
 		Medic medic1 = new Medic();
 		medic1.setType("medic1");
-		
 		marine1.setType("marine1");
+		
 		Marine marine2 = new Marine();
 		marine2.setMyGun(new Rifle());
 		marine2.getMyGun().reload(100);
 		marine2.setType("marine2");
+		marine2.attackMethod(Marine.총기사용);
 		
 		//medic -> m1
 		new Thread() {
@@ -58,7 +61,7 @@ public class Main_01 {
 			@Override
 			public void run() {
 				while(true) {
-					marine2.attack(marine2);
+					marine2.attack(marine1);
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {

@@ -9,8 +9,8 @@ public class Marine extends Unit {
 	
 	int attackMethod;
 	
-	private final static int 총기사용=1;
-	private final static int 기본공격=2;
+	public final static int 총기사용=1;
+	public final static int 기본공격=2;
 	
 	public void attackMethod(int 공격방식) {
 		this.attackMethod = 공격방식;
@@ -63,8 +63,10 @@ public class Marine extends Unit {
 		//amor -> hp -> dead
 		if(amor - damage > 0)
 			amor -= damage;
-		else if(hp - (amor - damage)>0)
-			hp = hp - (amor -damage);
+		else if(hp - (amor - damage)>0) {
+			hp = hp - (damage - amor);
+			amor=0;
+		}
 		else {
 			hp=0;amor=0;
 			isDead = true;
